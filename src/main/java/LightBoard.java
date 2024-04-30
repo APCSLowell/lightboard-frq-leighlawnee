@@ -10,11 +10,12 @@ public class LightBoard
    */
   public LightBoard(int numRows, int numCols)
   {
+    lights = new boolean[numRows][numCols];
     int total = numRows*numCols
    for(int i = 0; i<numRows; i++){
    for(int j = 0; j<numCols; j++){
 
-   if((int)(Math.random()*total)>(0.4*numCols))
+   if(Math.random()<0.4)
      lights[i][j]=true;
      else
      lights[i][j]=false;
@@ -39,7 +40,7 @@ public class LightBoard
       else if (lights[row][col]==false && count%3 == 0)
         return true;
     else
-        return false;
+        return lights[row][col];
 
  
   }
