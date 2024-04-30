@@ -11,7 +11,7 @@ public class LightBoard
   public LightBoard(int numRows, int numCols)
   {
     lights = new boolean[numRows][numCols];
-    int total = numRows*numCols
+    int total = numRows*numCols;
    for(int i = 0; i<numRows; i++){
    for(int j = 0; j<numCols; j++){
 
@@ -31,8 +31,8 @@ public class LightBoard
   public boolean evaluateLight(int row, int col)
   {
    int count = 0;
-    for(int i =0; i<light.numCols; i++){
-      if(lights[row][i]==true)
+    for(int i =0; i<lights.length; i++){
+      if(lights[i][col]==true)
         count++;
     }
     if(lights[row][col]==true && count%2 == 0)
